@@ -1,10 +1,12 @@
 // http://vuejs-templates.github.io/webpack/
 
-var path = require('path')
-var webpack = require('webpack')
+let path = require('path')
+let webpack = require('webpack')
 
-const { VueLoaderPlugin } = require('vue-loader')
-const resolve = (dir) => {
+const {VueLoaderPlugin} = require('vue-loader')
+const resolve = (dir) =
+>
+{
   return path.join(__dirname, '..', dir)
 }
 
@@ -22,7 +24,7 @@ module.exports = {
         use: [
           'vue-style-loader',
           'css-loader'
-        ],
+        ]
       },
       {
         test: /\.scss$/,
@@ -30,7 +32,7 @@ module.exports = {
           'vue-style-loader',
           'css-loader',
           'sass-loader'
-        ],
+        ]
       },
       {
         test: /\.vue$/,
@@ -49,11 +51,16 @@ module.exports = {
           // other vue-loader options go here
         }
       },
-      // {
-      //   test: /\.js$/,
-      //   loader: 'babel-loader',
-      //   exclude: /node_modules/
-      // },
+      {
+        enforce: 'pre',
+        test: /\.(js|vue)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        include: [resolve(__dirname, 'src')],
+        options: {
+          formatter: require('eslint-friendly-formatter')
+        }
+      },
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',

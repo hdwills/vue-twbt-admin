@@ -1,49 +1,77 @@
 <template>
-  <aside class="col-12 col-md-3 col-xl-2 layout-sidebar">
-    <ul class="layout-sidebar-nav">
-      <li><router-link to="/">Dashboard</router-link></li>
-      <li><router-link to="/test">test</router-link></li>
-      <li><router-link to="/test/test">test</router-link></li>
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Dashboard</a></li>
-    </ul>
-  </aside>
+  <nav class="col-md-2 d-none d-md-block bg-light layout-sidebar">
+    <div class="sidebar-sticky">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <router-link class="nav-link" to="/" exact>Dashboard</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/test" exact>test</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/test/test">test</router-link>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </template>
-
 <script>
 export default {
   name: 'Sidebar'
 }
-</script>
 
+</script>
 <style lang="scss">
-  .layout-sidebar {
-    height: 100vh;
-    border-right: 1px solid rgba(0,0,0,.1);
-    .layout-sidebar-nav {
-      list-style: none;
-      margin: 0 -15px;
-      padding: 0;
-      > li {
-        > a {
-          display: block;
-          padding: .25rem 1.5rem;
-          font-size: 90%;
-          color: rgba(0, 0, 0, .65);
-          &:hover {
-            color: rgba(0, 0, 0, .85);
-            text-decoration: none;
-            background-color: transparent;
-          }
-        }
-        &.active > a,
-        &.active:hover a {
-          font-weight: 500;
-          color: rgba(0, 0, 0, .85);
-          background-color: transparent;
-        }
-      }
-    }
+.layout-sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 48px 0 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+
+  .nav-link {
+    font-weight: 500;
+    color: #333;
   }
+
+  .nav-link .feather {
+    margin-right: 4px;
+    color: #999;
+  }
+
+  .nav-link.active,
+  .nav-link.router-link-active {
+    color: #007bff;
+  }
+
+  .nav-link:hover .feather,
+  .nav-link.active .feather {
+    color: inherit;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
 </style>

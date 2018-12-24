@@ -1,5 +1,5 @@
 <template>
-  <maim class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 layout-content">
+  <maim class="col-md-9 ml-sm-auto col-lg-10 px-4 layout-content">
     <router-view></router-view>
   </maim>
 </template>
@@ -9,3 +9,9 @@ export default {
   name: 'Content'
 }
 </script>
+
+<style>
+.layout-content {
+  padding-top: 48px;
+}
+</style>

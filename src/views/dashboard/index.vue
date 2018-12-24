@@ -1,7 +1,8 @@
 <template>
   <div class="dashboard">
+    <h2>dashboard</h2>
     <div class="row">
-      <div class="col-sm-6 col-md-3">
+      <div class="col-sm-6 col-xl-3">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
@@ -9,7 +10,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-3">
+      <div class="col-sm-6 col-xl-3">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
@@ -17,7 +18,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-3">
+      <div class="col-sm-6 col-xl-3">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
@@ -25,7 +26,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-3">
+      <div class="col-sm-6 col-xl-3">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
