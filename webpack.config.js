@@ -3,9 +3,8 @@
 let path = require('path')
 let webpack = require('webpack')
 
-const {VueLoaderPlugin} = require('vue-loader')
-const resolve = (dir) =
->
+const { VueLoaderPlugin } = require('vue-loader')
+const resolve = (dir) =>
 {
   return path.join(__dirname, '..', dir)
 }
