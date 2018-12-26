@@ -3,14 +3,14 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import Layout from './views/layout/layout.vue'
+import Layout from '@/views/layout/layout.vue'
 
 export default new Router({
   routes: [
     {
       path: '/login',
       name: 'Login',
-      component: () => import('./views/login/index')
+      component: () => import('@/views/login/index')
     },
     {
       path: '/',
@@ -20,7 +20,7 @@ export default new Router({
       children: [
         {
           path: '',
-          component: () => import('./views/dashboard/index')
+          component: () => import('@/views/dashboard/index')
         }
       ]
     },
@@ -31,12 +31,12 @@ export default new Router({
         {
           path: '',
           name: 'Test1',
-          component: () => import('./views/test/index')
+          component: () => import('@/views/test/index')
         },
         {
           path: 'test',
           name: 'Test2',
-          component: () => import('./views/test/test')
+          component: () => import('@/views/test/test')
         }
       ]
     }

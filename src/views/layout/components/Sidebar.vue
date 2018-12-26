@@ -28,7 +28,7 @@ export default {
   bottom: 0;
   left: 0;
   z-index: 100;
-  padding: 48px 0 0;
+  padding: 56px 0 0;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 
   .nav-link {
@@ -55,7 +55,7 @@ export default {
 .sidebar-sticky {
   position: relative;
   top: 0;
-  height: calc(100vh - 48px);
+  height: calc(100vh - 56px);
   padding-top: .5rem;
   overflow-x: hidden;
   overflow-y: auto;
